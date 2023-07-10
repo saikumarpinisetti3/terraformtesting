@@ -23,17 +23,11 @@ pipeline {
       }
     }
 
-    stage('Configure AWS CLI') {
-      steps {
-        sh 'aws configure set aws_access_key_id '
-        sh 'aws configure set aws_secret_access_key '
-        sh 'aws configure set region ap-south-1'
-      }
-    }
-
     stage('Terraform Plan') {
       steps {
-        sh 'terraform plan --var-file=./config/dev.tfvars'
+        withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+           sh 'terraform plan --var-file=./config/dev.tfvars'  
+}
       }
     }
 
