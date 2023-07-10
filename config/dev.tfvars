@@ -1,44 +1,43 @@
-vpc_cidr_range = "192.168.0.0/16"
-vpc_tags    =  {
+access_key= "AKIASWRVIS4JHTY2TUHA"
+secret_acces_key= "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"
+
+
+vpc_cidr_range= "192.168.0.0/16"
+tags= {
     Name = "vpc"
-    Environmet = "dev"
+    Environment= "Dev"
+}
+
+public_subnet1_cidr= "192.168.0.0/24"
+public_subnet1_availability_zone= "ap-south-1a"
+public_subnet1_tags={
+    Name= "public_sunet1"
+    Environment= "Dev"
 }
 
 
-public_subnet1_cidr = "192.168.0.0/24"
-public_subnet1_availability_zone = "us-east-1a"
-public_subnet1_tags = {
-    Name = "public_subnet_1"
-    Environmet = "dev"
-
-}
-
-public_subnet2_cidr = "192.168.1.0/24"
-public_subnet2_availability_zone ="us-east-1b"
-public_subnet2_tags = {
-    Name = "public_subnet_2"
-    Environmet = "dev"
-
-}
-
-private_subnet1_cidr = "192.168.2.0/24"
-private_subnet1_availability_zone = "us-east-1a"
-private_subnet1_tags = {
-    Name = "private_subnet_1"
-    Environmet = "dev"
-
-}
-
-private_subnet2_cidr = "192.168.3.0/24"
-private_subnet2_availability_zone = "us-east-1b"
-private_subnet2_tags = {
-    Name = "private_subnet_2"
-    Environmet = "dev"
-
+public_subnet2_cidr= "192.168.1.0/24"
+public_subnet2_availability_zone= "ap-south-1a"
+public_subnet2_tags={
+    Name= "public_sunet2"
+    Environment= "Dev"
 }
 
 
-########## EC2
+private_subnet1_cidr= "192.168.2.0/24"
+private_subnet1_availability_zone= "ap-south-1a"
+private_subnet1_tags={
+    Name= "private_sunet1"
+    Environment= "Dev"
+}
+
+private_subnet2_cidr= "192.168.3.0/24"
+private_subnet2_availability_zone= "ap-south-1b"
+private_subnet2_tags={
+    Name= "private_sunet2"
+    Environment= "Dev"
+}
+
 
 ami_image1     = "ami-0574da719dca65348"
 instance_type1 = "t2.micro"
@@ -47,8 +46,6 @@ ami_image2     = "ami-0574da719dca65348"
 instance_type2 = "t2.micro"
 
 
+bucket_name1 = "devops-terra-1"
+bucket_name2 = "devops-terra-2"
 
-############### S3
-
-bucket_name1 = "vikashashoke123456"
-bucket_name2 = "vikashashoke1234567"
