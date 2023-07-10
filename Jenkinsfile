@@ -25,7 +25,10 @@ pipeline {
 
     stage('terraform plan') {
       steps {
-          sh 'terraform plan -var access_key=$ACCESS_KEY -var secret_key=$SECRET_KEY --var-file=./config/dev.tfvars'
+          sh 'aws configure set aws_access_key_id "$access_key"'
+                sh 'aws configure set aws_secret_access_key "$secret_key"'
+                sh 'aws configure set region "ap-south-1"'
+          sh 'terraform plan --var-file=./config/dev.tfvars'
       }
     }
 
