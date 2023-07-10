@@ -73,12 +73,12 @@ module "eip2" {
 }
 
 module "natgw1"{
-    source = "./modules/aws_natw"
+    source = "./modules/aws_natgw"
     eip_id=module.eip1.eip_id
     subnet_id = module.aws_public_subnet1.subnet_id
 }
 module "natgw2"{
-    source="./modules/aws_natw"
+    source="./modules/aws_natgw"
     eip_id = module.eip2.eip_id
     subnet_id= module.aws_public_subnet2.subnet_id
 }
