@@ -1,5 +1,3 @@
-access_key= "AKIASWRVIS4JHTY2TUHA"
-secret_acces_key= "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"
 
 
 vpc_cidr_range= "192.168.0.0/16"
