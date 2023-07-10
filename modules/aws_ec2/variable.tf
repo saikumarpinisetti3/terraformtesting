@@ -1,7 +1,10 @@
-variable "ami_image" {
-  
+variable "ami_image"{
+
+}
+variable "instance_type"{
+
 }
 
-variable "instance_type" {
-  
+variable "tags"{
+    
 }
