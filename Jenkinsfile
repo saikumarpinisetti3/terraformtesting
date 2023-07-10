@@ -23,41 +23,33 @@ pipeline {
       }
     }
 
-    stage('terraform plan') {
+   pipeline {
+  agent any
+
+  stages {
+    stage('Configure AWS CLI') {
       steps {
-          sh 'aws configure set aws_access_key_id "$access_key"'
-                sh 'aws configure set aws_secret_access_key "$secret_key"'
-                sh 'aws configure set region "ap-south-1"'
-          sh 'terraform plan --var-file=./config/dev.tfvars'
+        sh 'aws configure set aws_access_key_id "AKIASWRVIS4JHTY2TUHA"'
+        sh 'aws configure set aws_secret_access_key "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"'
+        sh 'aws configure set region ap-south-1'
       }
     }
 
-    stage('terraform apply') {
+    stage('Terraform Plan') {
       steps {
-        script {
-          def apply = false
-          try {
-            input message: 'Can you please confirm the apply', ok: 'Ready to apply Terraform'
-            apply = true
-          } catch (err) {
-            apply = false
-            currentBuild.result = 'UNSTABLE'
-          }
-
-          if (apply) {
-            sh """
-              terraform apply -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' --var-file=./config/dev.tfvars --auto-approve
-            """
-          }
-        }
+        sh 'terraform plan --var-file=./config/dev.tfvars'
       }
     }
 
-    stage('terraform destroy') {
+    stage('Terraform Apply') {
       steps {
-        sh """
-          terraform destroy -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' --var-file=./config/dev.tfvars --auto-approve
-        """
+        sh 'terraform apply --var-file=./config/dev.tfvars --auto-approve'
+      }
+    }
+
+    stage('Terraform Destroy') {
+      steps {
+        sh 'terraform destroy --var-file=./config/dev.tfvars --auto-approve'
       }
     }
   }
