@@ -2,8 +2,6 @@ module "aws_vpc" {
 
     source = "./modules/aws_vpc"
     vpc_cidr_block = var.vpc_cidr_range
-    tags = var.tags
-    vpc_id= aws_vpc.vpc_id
 }
 
 module "aws_public_subnet1" {
