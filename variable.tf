@@ -1,6 +1,8 @@
 variable "vpc_cidr_range" {
   
 }
+variable "tags" {
+}
 variable "public_subnet1_cidr" {
   
 }
