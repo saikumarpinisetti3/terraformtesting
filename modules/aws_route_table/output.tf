@@ -1,3 +1,3 @@
-output "rt_id" {
-  value = aws_route_table.example.id
+output "route_table_id"{
+    value = aws_route_table.route.id
 }
