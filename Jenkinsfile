@@ -25,9 +25,12 @@ pipeline {
 
     stage('Terraform Plan') {
       steps {
-        withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-           sh 'terraform plan --var-file=./config/dev.tfvars'  
-}
+        withCredentials([
+          string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'ACCESS_KEY'),
+          string(credentialsId: 'AWS_SECRET_KEY_ID', variable: 'SECRET_KEY')
+        ]) {
+          sh 'terraform plan --var-file=./config/dev.tfvars'
+        }
       }
     }
 
