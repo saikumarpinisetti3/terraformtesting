@@ -1,7 +1,6 @@
-variable "bucket_name" {
-  
+variable "bucket_name"{
 }
 
-variable "tags" {
-  
+variable "tags"{
+
 }
