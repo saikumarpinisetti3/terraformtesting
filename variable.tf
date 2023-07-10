@@ -62,12 +62,6 @@ variable "ami_image2" {
 variable "instance_type2" {
   
 }
-variable "access_key" {
-  
-}
-variable "secret_key" {
-  
-}
 
 variable "bucket_name1" {
   
