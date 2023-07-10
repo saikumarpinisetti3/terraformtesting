@@ -1,13 +1,5 @@
-resource "aws_nat_gateway" "example" {
-  allocation_id = var.epi_id
+resource "aws_nat_gateway" "natw" {
+  allocation_id = var.eip_id
   subnet_id     = var.subnet_id
 
 }
-
-output "natgw_id" {
-  value = aws_nat_gateway.example.id
-}
-
-
-# Lets launch ec2 instances into public and private subnets
-
