@@ -1,4 +1,4 @@
-resource "aws_route_table" "example" {
+resource "aws_route_table" "route" {
   vpc_id = var.vpc_id
 
   route {
@@ -7,6 +7,3 @@ resource "aws_route_table" "example" {
   }
 
 }
-
-
-
