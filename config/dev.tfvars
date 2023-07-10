@@ -1,10 +1,6 @@
 
 
 vpc_cidr_range= "192.168.0.0/16"
-tags= {
-    Name = "vpc"
-    Environment= "Dev"
-}
 
 public_subnet1_cidr= "192.168.0.0/24"
 public_subnet1_availability_zone= "ap-south-1a"
