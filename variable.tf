@@ -1,7 +1,9 @@
 variable "vpc_cidr_range" {
   
 }
-variable "vpc_tags"{}
+variable "vpc_tags"{
+type= map(string)
+}
 
 
 variable "public_subnet1_cidr" {
