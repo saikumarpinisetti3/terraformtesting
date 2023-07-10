@@ -1,7 +1,5 @@
-variable "epi_id" {
-  
-}
+variable "eip_id"{
 
+}
 variable "subnet_id" {
-  
 }
