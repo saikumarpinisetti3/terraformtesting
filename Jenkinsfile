@@ -33,9 +33,8 @@ pipeline{
             
             steps{
 
-                sh """
-                 terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' --var-file=./config/dev.tfvars
-                """
+               withCredentials([string(credentialsId: 'your-credentials-id', variable: 'SECRET_KEY'), string(credentialsId: 'your-credentials-id', variable: 'ACCESS_KEY')]) {
+                  sh 'terraform plan -var access_key=$ACCESS_KEY -var secret_key=$SECRET_KEY --var-file=./config/dev.tfvars'
             }
         }
         stage('terraform apply'){
