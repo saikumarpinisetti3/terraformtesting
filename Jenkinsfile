@@ -23,10 +23,6 @@ pipeline {
       }
     }
 
-   pipeline {
-  agent any
-
-  stages {
     stage('Configure AWS CLI') {
       steps {
         sh 'aws configure set aws_access_key_id "AKIASWRVIS4JHTY2TUHA"'
