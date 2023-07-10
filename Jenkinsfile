@@ -25,8 +25,8 @@ pipeline {
 
     stage('Configure AWS CLI') {
       steps {
-        sh 'aws configure set aws_access_key_id "AKIASWRVIS4JHTY2TUHA"'
-        sh 'aws configure set aws_secret_access_key "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"'
+        sh 'aws configure set aws_access_key_id '
+        sh 'aws configure set aws_secret_access_key '
         sh 'aws configure set region ap-south-1'
       }
     }
